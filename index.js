@@ -6,7 +6,7 @@ const authToken = process.env.TWILIO_AUTH_TOKEN
 const client = require('twilio')(accountSid, authToken)
 
 client.messages.create({
-    to: '+17866780894',
-    from: '+12282060041',
+    to: '+1YourNumber',
+    from: process.env.TWILIO_NUMBER,
     body: 'This is my first message with twilio and node',
 }).then(message => console.log(message.sid))
