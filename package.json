@@ -1,0 +1,11 @@
+{
+  "name": "node-twilio-msg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "twilio": "^3.39.1"
+  }
+}
