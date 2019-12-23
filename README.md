@@ -21,5 +21,6 @@ React application with Express server.
   * To create an account in  Twilio use this link www.twilio.com/referral/hlwoqu
 
 ## To make it run
-yarn start from project root
-yarn start inside of /client
+* yarn start from project root
+  
+* yarn start inside of /client
