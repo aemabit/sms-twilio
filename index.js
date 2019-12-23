@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const pino = require('express-pino-logger')();
+// const pino = require('express-pino-logger')();
+const cors = require('cors')
 require('dotenv').config()
 const accountSid = process.env.TWILIO_ACCOUNT_SID
 const authToken = process.env.TWILIO_AUTH_TOKEN
@@ -13,17 +14,21 @@ const app = express()
 app.set('port', process.env.PORT || 8000)
 
 // MIDDLEWARES
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use(pino)
 
 // ROUTES
+app.get('/', (req, res) => {
+    res.send("Hello this works")
+})
+
 app.post('/api/messages', (req, res) => {
-    res.header('Content-Type', 'application/json')
+    // res.header('Content-Type', 'application/json')
     client.messages.create({
-        to: req.body.to,
+        to: req.body.number,
         from: myNumber,
-        body: 'This is my first message with twilio and node',
+        body: req.body.msg,
     })
     .then(() => {
         res.send(JSON.stringify({ success: true }));
