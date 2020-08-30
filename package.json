@@ -9,7 +9,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-pino-logger": "^4.0.0",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^3.1.0",
     "twilio": "^3.39.1"
   }
 }
